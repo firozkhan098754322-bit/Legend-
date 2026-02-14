@@ -4,173 +4,129 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0B0F19">
-    <meta name="description" content="Mohsin - Expert Mobile App Developer specializing in iOS, Android, and React Native solutions for startups. Building high-performance, 3D-styled applications.">
+    <meta name="theme-color" content="#020617">
+    <meta name="description" content="Mohsin - Premium Mobile App Developer. specialized in high-performance iOS, Android, and React Native solutions for Indian Startups.">
     <meta name="keywords" content="Mobile App Developer, React Native, iOS, Android, Flutter, App Development India, Startup Apps, 3D UI Design">
     <meta name="author" content="Mohsin">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://your-portfolio-url.com/">
-    <meta property="og:title" content="Mohsin | Mobile App Developer">
+    <meta property="og:title" content="Mohsin | Premium App Developer">
     <meta property="og:description" content="I build high-performance Mobile Apps for Startups. iOS, Android, and React Native expert.">
     <meta property="og:image" content="https://your-portfolio-url.com/og-image.jpg">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://your-portfolio-url.com/">
-    <meta property="twitter:title" content="Mohsin | Mobile App Developer">
-    <meta property="twitter:description" content="I build high-performance Mobile Apps for Startups. iOS, Android, and React Native expert.">
-    <meta property="twitter:image" content="https://your-portfolio-url.com/og-image.jpg">
-
     <link rel="manifest" href="/manifest.json">
-    <title>Mohsin | Mobile App Developer</title>
+    <title>Mohsin | Premium App Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500&f[]=inter@400,600&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500&f[]=inter@400,600&display=swap" rel="stylesheet">
     <style>
       :root {
-        --background-color-start: #020617;
-        --background-color-mid: #0B0F19;
-        --background-color-end: #111827;
+        --bg-dark: #020617;
+        --bg-card: rgba(15, 23, 42, 0.6);
         --text-primary: #F8FAFC;
         --text-secondary: #94A3B8;
-        --text-muted: #64748B;
-        --accent-primary: #3B82F6;
-        --accent-secondary: #2563EB;
-        --accent-hover: #1D4ED8;
-        --card-background: rgba(255, 255, 255, 0.04);
-        --border-color: rgba(255, 255, 255, 0.08);
+        --accent-blue: #3B82F6;
+        --accent-purple: #8B5CF6;
+        --accent-gold: #F59E0B;
+        --border-light: rgba(255, 255, 255, 0.08);
       }
+      
       html.light {
-        --background-color-start: #eef2f9;
-        --background-color-mid: #f8fafc;
-        --background-color-end: #f0f2f5;
-        --text-primary: #020617;
-        --text-secondary: #334155;
-        --text-muted: #64748B;
-        --card-background: rgba(255, 255, 255, 0.6);
-        --border-color: rgba(0, 0, 0, 0.08);
+        --bg-dark: #F8FAFC;
+        --bg-card: rgba(255, 255, 255, 0.8);
+        --text-primary: #0F172A;
+        --text-secondary: #475569;
+        --border-light: rgba(0, 0, 0, 0.08);
       }
+
       body {
         font-family: 'Inter', sans-serif;
-        background-color: var(--background-color-mid);
-        background-image: linear-gradient(135deg, var(--background-color-start), var(--background-color-mid), var(--background-color-end));
+        background-color: var(--bg-dark);
         color: var(--text-primary);
-        transition: background-color 0.3s ease, color 0.3s ease;
+        overflow-x: hidden;
       }
+
       .heading-font {
         font-family: 'Satoshi', sans-serif;
       }
+
+      /* Premium 3D Glass Card */
       .glass-card {
-        background: var(--card-background);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid var(--border-color);
-        transition: background-color 0.3s ease, border-color 0.3s ease;
+        background: var(--bg-card);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid var(--border-light);
+        box-shadow: 
+          0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+          0 2px 4px -1px rgba(0, 0, 0, 0.06),
+          inset 0 0 20px rgba(255, 255, 255, 0.02);
       }
-       .noise-texture::before {
-        content: "";
+
+      /* Animated Premium Background Mesh */
+      .premium-bg {
         position: fixed;
         top: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
-        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXVpaWl9fX18fHyAgICEhISBgYELCwsPDw8IBgQDBgQGBgYIDgUCAgMODg0NDg0KDAwLDBYNDg4AAAAAAAAAAAAbN21PAAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAKRJREFUOI2l1M0RgCAMQNNdoO//t42V8SJKz78pCnlvEg4NJeJNfNnT5v39wNQ8K6vxyT3n8y9o6c7r00ie6g6tT8B6nefO93KMB+1u3S7kYfwt4PDKNns3gHl2b+DTynCLkPab1v4eYOt3GLQdJdKPSljvwhgS2KAF2AOBbLWsG/QGj4g1cJAiYfXgGg3s0uAfM9x3pweRoq4b2O9VO0LwGz2MEtQd7r/wP23/v//w/AP5X0A0r6AaS9APb3AP1fAP0fAP0/AP1XAP1eAP1zAP1vAP1nAP1jAP1lAP1mAP1jAP1rAP1pAP1tAP1vAP1xAP1zAP13AP18AP1+AP2BAAAAQEFEQVRIx2NkYGAQYGBgYGRjYmRiYgQWFRZ5GBgYGBkZ2RhZ2MAABgYGBkZ2RhYGBgYGBgYGRmZGRgYGBgYAAAAAAAB2BgYAoAIAABQDAAAlzgAAAABJRU5ErkJggg==');
-        opacity: 0.03;
-        mix-blend-mode: overlay;
+        z-index: -10;
+        background: 
+          radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.08), transparent 25%), 
+          radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.08), transparent 25%);
         pointer-events: none;
-        z-index: 100;
-       }
+      }
+      
+      .noise-overlay {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXVpaWl9fX18fHyAgICEhISBgYELCwsPDw8IBgQDBgQGBgYIDgUCAgMODg0NDg0KDAwLDBYNDg4AAAAAAAAAAAAbN21PAAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAKRJREFUOI2l1M0RgCAMQNNdoO//t42V8SJKz78pCnlvEg4NJeJNfNnT5v39wNQ8K6vxyT3n8y9o6c7r00ie6g6tT8B6nefO93KMB+1u3S7kYfwt4PDKNns3gHl2b+DTynCLkPab1v4eYOt3GLQdJdKPSljvwhgS2KAF2AOBbLWsG/QGj4g1cJAiYfXgGg3s0uAfM9x3pweRoq4b2O9VO0LwGz2MEtQd7r/wP23/v//w/AP5X0A0r6AaS9APb3AP1fAP0fAP0/AP1XAP1eAP1zAP1vAP1nAP1jAP1lAP1mAP1jAP1rAP1pAP1tAP1vAP1xAP1zAP13AP18AP1+AP2BAAAAQEFEQVRIx2NkYGAQYGBgYGRjYmRiYgQWFRZ5GBgYGBkZ2RhZ2MAABgYGBkZ2RhYGBgYGBgYGRmZGRgYGBgYAAAAAAAB2BgYAoAIAABQDAAAlzgAAAABJRU5ErkJggg==');
+        opacity: 0.03;
+        z-index: -5;
+        pointer-events: none;
+      }
+
+      /* Scroll Reveal */
       .scroll-animation {
         opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1), transform 0.8s cubic-bezier(0.4,0,0.2,1);
+        transform: translateY(40px) scale(0.95);
+        transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: transform, opacity;
       }
       .scroll-animation.visible {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
       }
-      .gradient-border {
-        position: relative;
-        background: transparent;
-        border-radius: 1rem;
-        overflow: hidden;
+
+      /* Gold Shine Effect for Premium Elements */
+      .gold-shine {
+        background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-size: 200% auto;
+        animation: shine 4s linear infinite;
       }
-      .gradient-border::before {
-        content: '';
-        position: absolute;
-        top: 0; right: 0; bottom: 0; left: 0;
-        z-index: -1;
-        margin: -2px;
-        border-radius: inherit;
-        background: linear-gradient(145deg, var(--accent-secondary), var(--accent-primary), #ff00c6, var(--accent-secondary));
-        background-size: 400% 400%;
-        animation: gradient-spin 8s linear infinite;
-        transition: opacity 0.4s ease-in-out;
-        opacity: 0;
+      
+      @keyframes shine {
+        to {
+          background-position: 200% center;
+        }
       }
-      .gradient-border:hover::before {
-        opacity: 1;
-      }
-      @keyframes gradient-spin {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-      }
-      .animated-grid {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: -2;
-          background-image: 
-              linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-          background-size: 40px 40px;
-          animation: grid-move 20s linear infinite;
-          opacity: 1;
-          transition: opacity 0.3s ease;
-      }
-      html.light .animated-grid {
-        opacity: 0.5;
-        background-image: 
-              linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-      }
-      @keyframes grid-move {
-          0% { background-position: 0 0; }
-          100% { background-position: 80px 80px; }
-      }
-      .magnetic-button {
-          transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      }
-      section {
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
-      }
-      html.light section {
-        border-top: 1px solid rgba(0, 0, 0, 0.08);
+
+      /* 3D Utilities */
+      .perspective-1000 { perspective: 1000px; }
+      .perspective-1200 { perspective: 1200px; }
+      .transform-style-3d { transform-style: preserve-3d; }
+      .backface-hidden { backface-visibility: hidden; }
+      
+      /* Smooth Scrolling */
+      html {
+        scroll-behavior: smooth;
       }
     </style>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Mohsin",
-      "url": "https://your-portfolio-url.com",
-      "jobTitle": "Mobile App Developer",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Mohsin - Freelance Developer"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/your-profile",
-        "https://github.com/your-profile"
-      ]
-    }
-    </script>
   <script type="importmap">
 {
   "imports": {
@@ -192,8 +148,9 @@
   }
 </script>
 </head>
-  <body class="noise-texture">
-    <div class="animated-grid"></div>
+  <body>
+    <div class="premium-bg"></div>
+    <div class="noise-overlay"></div>
     <div id="root"></div>
     <script type="module" src="index.tsx"></script>
   </body>

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 interface LoginModalProps {
@@ -22,12 +21,12 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose, onLogin }) => 
 
         // Simulate API call
         setTimeout(() => {
-            if (email === 'admin@mohsin.dev' && password === 'admin') {
+            if (email === 'admin' && password === 'admin') {
                 setIsLoading(false);
                 onLogin();
                 onClose();
             } else {
-                setError('Invalid credentials. Try admin@mohsin.dev / admin');
+                setError('Invalid credentials.');
                 setIsLoading(false);
             }
         }, 1500);
@@ -48,13 +47,13 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose, onLogin }) => 
 
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                        <label className="block text-xs font-medium text-secondary mb-1">Email</label>
+                        <label className="block text-xs font-medium text-secondary mb-1">Username / Email</label>
                         <input 
-                            type="email" 
+                            type="text" 
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             className="w-full bg-black/20 border border-white/10 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-blue-500"
-                            placeholder="name@company.com"
+                            placeholder="admin"
                         />
                     </div>
                     <div>
@@ -81,7 +80,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose, onLogin }) => 
                 
                 <div className="mt-4 text-center">
                     <p className="text-xs text-secondary">
-                        Hint: Use <span className="text-blue-300">admin@mohsin.dev</span> / <span className="text-blue-300">admin</span>
+                        Hint: Use <span className="text-blue-300">admin</span> / <span className="text-blue-300">admin</span>
                     </p>
                 </div>
             </div>

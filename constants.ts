@@ -2,106 +2,143 @@
 import React from 'react';
 import { Project, PricingPlan, Testimonial, Service } from './types';
 
-export const WHATSAPP_NUMBER = '918802760151'; // Country code + number
+export const WHATSAPP_NUMBER = '918802760151'; 
 
 export const WHATSAPP_MESSAGES = {
-    general: `Hi Mohsin, I visited your portfolio and I'd like to discuss a mobile app project.`,
-    fromPortfolio: (projectTitle: string) => `Hi Mohsin, I saw the "${projectTitle}" app in your portfolio and want to build something similar.`,
-    fromPricing: `Hi Mohsin, I saw your app development pricing and want to discuss my idea.`,
-    fromExitPopup: `Hi Mohsin, before I go, I wanted to ask a quick question about app development.`,
-    fromCalculator: (estimate: string) => `Hi Mohsin, I used your price calculator and got an estimate of ${estimate}. I'd like to discuss the details.`
+    general: `Hi Mohsin, I'm interested in your premium app development services.`,
+    fromPortfolio: (projectTitle: string) => `Hi Mohsin, I was impressed by "${projectTitle}" in your portfolio. I want to build a similar high-quality app.`,
+    fromPricing: `Hi Mohsin, I saw your pricing plans and want to discuss a potential project.`,
+    fromExitPopup: `Hi Mohsin, I have a quick question about building a scalable startup app.`,
+    fromCalculator: (estimate: string) => `Hi Mohsin, I used your estimator (approx ${estimate}). I'd like to finalize the requirements.`
 };
 
 export const PROJECTS: Project[] = [
     {
         id: 1,
-        title: 'QuickCrave - Food Delivery',
+        title: 'QuickCrave',
         category: 'Mobile App',
-        description: 'A hyper-local food delivery app with real-time driver tracking and AI-based food recommendations.',
-        techStack: ['React Native', 'Redux', 'Google Maps API', 'Node.js'],
+        description: 'A futuristic food delivery ecosystem with predictive AI ordering and 3D food visualization.',
+        techStack: ['React Native', 'Node.js', 'Socket.io', 'Three.js'],
         imageUrl: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1981&auto=format&fit=crop',
         liveUrl: 'https://example.com/quickcrave',
         githubUrl: 'https://github.com/mohsin/quickcrave',
-        problem: 'Users experienced high latency in tracking orders and poor restaurant discovery.',
-        solution: 'Implemented WebSocket for real-time tracking and an ML algorithm for personalized craving suggestions.',
-        clientResult: '10k+ Downloads in Month 1'
+        problem: 'Standard delivery apps felt static and lacked engagement.',
+        solution: 'Integrated WebGL for 3D dish previews and a gamified loyalty system.',
+        clientResult: '40% Higher Retention'
     },
     {
         id: 2,
-        title: 'FitPulse - AI Trainer',
+        title: 'FitPulse',
         category: 'Mobile App',
-        description: 'A fitness coaching app that uses computer vision to correct posture during home workouts.',
-        techStack: ['Flutter', 'TensorFlow Lite', 'Firebase', 'HealthKit'],
+        description: 'An AI-powered personal trainer that uses real-time computer vision to correct posture.',
+        techStack: ['Flutter', 'TensorFlow', 'Python', 'AWS'],
         imageUrl: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop',
         liveUrl: 'https://example.com/fitpulse',
         githubUrl: 'https://github.com/mohsin/fitpulse',
-        problem: 'Home workouts often lead to injury due to incorrect form without a trainer.',
-        solution: 'Integrated on-device AI pose estimation to provide real-time audio feedback on posture.',
-        clientResult: '4.9 Star Store Rating'
+        problem: 'Users were getting injured doing home workouts without supervision.',
+        solution: 'Built a proprietary pose-estimation engine that runs locally on-device.',
+        clientResult: 'Best Health App 2024'
     },
     {
         id: 3,
-        title: 'PaySwift - Neo Banking',
+        title: 'PaySwift',
         category: 'Mobile App',
-        description: 'A secure fintech wallet app allowing peer-to-peer payments and crypto portfolio management.',
-        techStack: ['Swift (iOS)', 'Kotlin (Android)', 'Secure Enclave', 'AWS'],
+        description: 'A next-gen fintech wallet with biometric security and decentralized identity management.',
+        techStack: ['Swift', 'Kotlin', 'Blockchain', 'Node.js'],
         imageUrl: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2070&auto=format&fit=crop',
         liveUrl: 'https://example.com/payswift',
         githubUrl: 'https://github.com/mohsin/payswift',
-        problem: 'Existing wallets were cluttered and lacked biometric security for high-value transactions.',
-        solution: 'Designed a minimalist UI with FaceID integration and MPC (Multi-Party Computation) security.',
-        clientResult: '$2M+ Transacted Monthly'
+        problem: 'Traditional banking apps were slow and insecure for crypto assets.',
+        solution: 'Implemented multi-signature security and a glassmorphism UI for clarity.',
+        clientResult: '$2M+ Monthly Volume'
     },
     {
         id: 4,
-        title: 'UrbanRide - Cab Booking',
+        title: 'UrbanRide',
         category: 'Mobile App',
-        description: 'A ride-sharing application focusing on electric vehicle (EV) fleets with optimized route matching.',
-        techStack: ['React Native', 'Mapbox', 'Stripe', 'Socket.io'],
+        description: 'Electric vehicle ride-sharing platform with optimized routing for battery conservation.',
+        techStack: ['React Native', 'Mapbox', 'Go', 'Redis'],
         imageUrl: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop',
         liveUrl: 'https://example.com/urbanride',
         githubUrl: 'https://github.com/mohsin/urbanride',
-        problem: 'High cancellation rates due to inefficient driver-rider matching algorithms.',
-        solution: 'Built a custom matching engine reducing wait times by 35% and incorporated EV charging station routing.',
-        clientResult: '35% Reduced Wait Time'
+        problem: 'EV drivers faced range anxiety and inefficient dispatching.',
+        solution: 'Created a custom routing algorithm considering charging station density.',
+        clientResult: '30% Fleet Efficiency'
     }
 ];
 
+// Replaced generic logos with "Startup" style text logos matching the portfolio
 export const CLIENTS = [
-    { name: 'StartUp Inc', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg' },
-    { name: 'TechFlow', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg' },
-    { name: 'AppMaster', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg' },
-    { name: 'CreativeStudio', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
-    { name: 'CloudSystems', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazon/amazon-original.svg' },
-    { name: 'DataCorp', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg' },
+    { name: 'QuickCrave', type: 'FoodTech' },
+    { name: 'FitPulse', type: 'Health & Fitness' },
+    { name: 'PaySwift', type: 'FinTech' },
+    { name: 'UrbanRide', type: 'Logistics' },
+    { name: 'FreshMart', type: 'E-Commerce' },
 ];
 
 export const SERVICES: Service[] = [
-    { title: 'Cross-Platform Apps', icon: React.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" }, React.createElement("rect", { x: "5", y: "2", width: "14", height: "20", rx: "2", ry: "2" }), React.createElement("line", { x1: "12", y1: "18", x2: "12.01", y2: "18" })), description: 'High-performance apps for both iOS and Android using React Native & Flutter. One codebase, double the reach.' },
-    { title: 'Native iOS & Android', icon: React.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" }, React.createElement("path", { d: "M12 19l7-7 3 3-7 7-3-3z" }), React.createElement("path", { d: "M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" }), React.createElement("path", { d: "M2 2l7.586 7.586" }), React.createElement("circle", { cx: "11", cy: "11", r: "2" })), description: 'Pure native development using Swift and Kotlin for mission-critical applications requiring maximum hardware access.' },
-    { title: 'Mobile UI/UX Design', icon: React.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" }, React.createElement("path", { d: "M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" })), description: 'Designing intuitive, thumb-friendly mobile interfaces with 3D elements and smooth micro-interactions.' },
-    { title: 'App Maintenance', icon: React.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" }, React.createElement("path", { d: "M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" })), description: 'Ongoing support, performance optimization, bug fixes, and feature updates to keep your app 5-star rated.' },
+    { 
+        title: 'Premium App Development', 
+        icon: React.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", width: "32", height: "32", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round" }, React.createElement("rect", { x: "5", y: "2", width: "14", height: "20", rx: "2", ry: "2" }), React.createElement("line", { x1: "12", y1: "18", x2: "12.01", y2: "18" })), 
+        description: 'Bespoke iOS & Android applications built with React Native or Flutter. Focused on scalability and award-winning UI.' 
+    },
+    { 
+        title: 'Native Performance', 
+        icon: React.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", width: "32", height: "32", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round" }, React.createElement("path", { d: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" })), 
+        description: 'Pure native development (Swift/Kotlin) for hardware-intensive projects requiring maximum performance.' 
+    },
+    { 
+        title: '3D & Motion Design', 
+        icon: React.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", width: "32", height: "32", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round" }, React.createElement("path", { d: "M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" }), React.createElement("polyline", { points: "3.27 6.96 12 12.01 20.73 6.96" }), React.createElement("line", { x1: "12", y1: "22.08", x2: "12", y2: "12" })), 
+        description: 'Immersive 3D interfaces and fluid animations that differentiate your brand from competitors.' 
+    },
+    { 
+        title: 'Scalable Backend', 
+        icon: React.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", width: "32", height: "32", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round" }, React.createElement("path", { d: "M12 2a10 10 0 1 0 10 10H12V2z" }), React.createElement("path", { d: "M12 2a10 10 0 1 1-10 10h10V2z" })), 
+        description: 'Enterprise-grade backend architecture using Node.js, Go, or Python to handle millions of users.' 
+    },
 ];
 
 export const PRICING_PLANS: PricingPlan[] = [
     {
-        title: 'MVP App Package',
-        price: '₹20,000',
-        features: ['Hybrid Mobile App', '3 - 5 Core Screens', 'Standard UI Design', 'APK Delivery', '7-10 Days Delivery', '1 Month Support'],
+        title: 'Basic / Student',
+        price: '₹15,000',
+        features: [
+            'Simple Android App', 
+            '3-5 Screens', 
+            'Standard UI Design', 
+            'Contact Integration', 
+            '7 Days Delivery',
+            '1 Month Support'
+        ],
         isRecommended: false,
         whatsappMessage: WHATSAPP_MESSAGES.fromPricing
     },
     {
-        title: 'Startup Pro App',
-        price: '₹50,000',
-        features: ['iOS & Android (Flutter/RN)', '8 - 12 Custom Screens', 'Premium 3D-Style UI', 'Firebase/API Integration', 'Play Store Upload', '2 Months Support'],
+        title: 'Standard Startup',
+        price: '₹45,000',
+        features: [
+            'iOS & Android (Flutter)', 
+            '12+ Custom Screens', 
+            'Premium Glassmorphism UI', 
+            'Admin Panel & Backend', 
+            'Play Store Deployment', 
+            '3 Months Priority Support'
+        ],
         isRecommended: true,
         whatsappMessage: WHATSAPP_MESSAGES.fromPricing
     },
     {
-        title: 'Enterprise Custom',
-        price: '₹90,000+',
-        features: ['Native or Cross-Platform', 'Unlimited Screens', 'AI/ML Integration', 'Admin Panel Web App', 'Advanced Security', 'Priority Support'],
+        title: 'Premium Company',
+        price: '₹1,20,000+',
+        features: [
+            'Native or Hybrid Arch', 
+            'Unlimited Screens', 
+            'Advanced AI Integration', 
+            'Custom 3D Animations', 
+            'Scalable Cloud AWS/GCP', 
+            'Dedicated Project Manager'
+        ],
         isRecommended: false,
         whatsappMessage: WHATSAPP_MESSAGES.fromPricing
     }
@@ -109,27 +146,31 @@ export const PRICING_PLANS: PricingPlan[] = [
 
 export const TESTIMONIALS: Testimonial[] = [
     {
-        quote: "The food delivery app Mohsin built is incredibly fast. The real-time tracking is smoother than Uber Eats!",
+        quote: "Mohsin isn't just a developer; he's a product architect. The 3D interactions he built for QuickCrave increased our engagement by 200%.",
         author: "Rohan Sharma",
-        company: "Founder, QuickCrave",
-        country: "in"
+        company: "CEO, QuickCrave",
+        country: "in",
+        rating: 5
     },
     {
-        quote: "Mohsin is a React Native wizard. He turned our complex designs into a pixel-perfect, high-performance app.",
+        quote: "We interviewed 50+ developers. Mohsin was the only one who understood how to build a scalable fintech architecture securely.",
+        author: "Aditya Singh",
+        company: "Founder, PaySwift",
+        country: "in",
+        rating: 5
+    },
+    {
+        quote: "The attention to detail is unmatched. The app feels liquid smooth. Worth every rupee for the premium quality delivered.",
         author: "Sarah Jenkins",
         company: "CTO, UrbanRide",
-        country: "us"
-    },
-     {
-        quote: "We needed a secure fintech app and Mohsin delivered. His knowledge of mobile security is top-tier.",
-        author: "Aditya Singh",
-        company: "CEO, PaySwift",
-        country: "in"
+        country: "us",
+        rating: 5
     },
     {
-        quote: "The AI trainer integration in our fitness app works flawlessly. Highly recommended for complex app development.",
+        quote: "He delivered a complex AI computer vision app ahead of schedule. Truly premium service standards.",
         author: "David Chen",
         company: "Product Lead, FitPulse",
-        country: "gb"
+        country: "gb",
+        rating: 4.9
     }
 ];

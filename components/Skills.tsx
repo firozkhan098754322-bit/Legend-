@@ -1,19 +1,18 @@
-
 import React from 'react';
 
 const skills = [
-    { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-    { name: 'React Native', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-    { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
-    { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
-    { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
-    { name: 'Flutter', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg' },
-    { name: 'Swift', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg' },
-    { name: 'AWS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg' },
-    { name: 'Firebase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' },
-    { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
-    { name: 'Figma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
-    { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+    { name: 'React', level: 'Advanced' },
+    { name: 'React Native', level: 'Expert' },
+    { name: 'TypeScript', level: 'Advanced' },
+    { name: 'Next.js', level: 'Intermediate' },
+    { name: 'Node.js', level: 'Advanced' },
+    { name: 'Flutter', level: 'Expert' },
+    { name: 'Swift', level: 'Intermediate' },
+    { name: 'AWS', level: 'Advanced' },
+    { name: 'Firebase', level: 'Expert' },
+    { name: 'Docker', level: 'Intermediate' },
+    { name: 'Figma', level: 'Advanced' },
+    { name: 'PostgreSQL', level: 'Advanced' },
 ];
 
 const Skills: React.FC = () => {
@@ -23,15 +22,16 @@ const Skills: React.FC = () => {
                 <h2 className="text-3xl md:text-4xl font-bold text-primary heading-font">My Tech Stack</h2>
                 <p className="text-lg text-secondary mt-4 max-w-2xl mx-auto">Technologies I use to build powerful and scalable applications.</p>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 scroll-animation">
+            <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto px-4 scroll-animation">
                 {skills.map((skill, index) => (
                     <div
                         key={skill.name}
-                        className="glass-card p-6 rounded-2xl flex flex-col items-center justify-center aspect-square transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10"
+                        className="glass-card px-6 py-3 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-105 hover:bg-white/10 hover:shadow-lg hover:shadow-blue-500/20 cursor-default border border-white/5"
                         style={{ animationDelay: `${index * 50}ms` }}
                     >
-                        <img src={skill.icon} alt={`${skill.name} logo`} className="h-12 w-12 md:h-16 md:w-16" />
-                        <p className="mt-4 text-sm md:text-base font-medium text-primary">{skill.name}</p>
+                        <span className="text-sm md:text-base font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+                            {skill.name}
+                        </span>
                     </div>
                 ))}
             </div>

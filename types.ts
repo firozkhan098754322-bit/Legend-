@@ -39,4 +39,5 @@ export interface Testimonial {
     author: string;
     company: string;
     country: 'in' | 'us' | 'gb' | 'ae';
+    rating: number;
 }

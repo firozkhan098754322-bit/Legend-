@@ -4,61 +4,69 @@ import { PRICING_PLANS } from '../constants';
 import WhatsAppButton from './WhatsAppButton';
 
 const TrustStat = ({ value, label }: { value: string, label: string }) => (
-    <div className="text-center">
-        <p className="text-3xl font-bold text-primary">{value}</p>
-        <p className="text-sm text-secondary">{label}</p>
+    <div className="text-center p-4">
+        <p className="text-3xl font-black text-white">{value}</p>
+        <p className="text-xs uppercase tracking-widest text-gray-400 mt-1">{label}</p>
     </div>
 );
 
 const Pricing: React.FC = () => {
     return (
-        <section id="pricing" className="py-20">
-            <div className="text-center mb-12 scroll-animation">
-                <h2 className="text-3xl md:text-4xl font-bold text-primary heading-font">Affordable Premium Development</h2>
-                <p className="text-lg text-secondary mt-4 max-w-2xl mx-auto">Transparent Pricing for Indian Startups – No Hidden Charges. Choose a plan that fits your vision.</p>
+        <section id="pricing" className="py-32 relative">
+             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/10 to-transparent pointer-events-none"></div>
+
+            <div className="text-center mb-20 scroll-animation">
+                <span className="text-blue-500 font-bold tracking-widest uppercase text-sm mb-4 block">Invest in Quality</span>
+                <h2 className="text-4xl md:text-5xl font-black text-white heading-font mb-6">Premium App Packages</h2>
+                <p className="text-lg text-gray-400 mt-4 max-w-2xl mx-auto leading-relaxed">
+                    Transparent, fixed-price packages designed for serious founders. <br/> No hidden costs. No spaghetti code. Just world-class engineering.
+                </p>
             </div>
 
-            <div className="mb-12 scroll-animation">
-                <div className="glass-card rounded-2xl p-6 text-center border-l-4 border-blue-500">
-                    <h3 className="font-semibold text-lg text-blue-400">🕐 Limited Projects Per Month</h3>
-                    <p className="text-secondary mt-2">To maintain the highest quality and provide dedicated attention to each project, I only take on 4-5 new projects per month. Book your slot now!</p>
-                </div>
-            </div>
-
-            <div className="grid lg:grid-cols-3 gap-8 items-center scroll-animation">
+            <div className="grid lg:grid-cols-3 gap-8 items-center max-w-7xl mx-auto px-4 scroll-animation">
                 {PRICING_PLANS.map((plan) => (
                     <div
                         key={plan.title}
-                        className={`gradient-border group ${plan.isRecommended ? 'transform lg:scale-110 z-10' : ''}`}
+                        className={`relative group transition-transform duration-500 ${plan.isRecommended ? 'lg:-translate-y-8 z-10' : 'hover:-translate-y-2'}`}
                     >
-                        <div className="glass-card p-8 rounded-2xl h-full flex flex-col">
-                            {plan.isRecommended && (
-                                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                                    <span className="bg-gradient-to-r from-blue-600 to-blue-500 text-white text-sm font-bold px-6 py-2 rounded-full uppercase tracking-wider shadow-lg">
-                                        Most Popular
-                                    </span>
+                        <div className={`
+                            h-full rounded-3xl p-1
+                            ${plan.isRecommended 
+                                ? 'bg-gradient-to-b from-yellow-500 via-yellow-300 to-yellow-600 shadow-[0_0_50px_rgba(234,179,8,0.2)]' 
+                                : 'bg-gradient-to-b from-white/10 to-white/5 border border-white/10'}
+                        `}>
+                            <div className="bg-[#0B0F19] rounded-[1.4rem] h-full p-8 flex flex-col relative overflow-hidden">
+                                {plan.isRecommended && (
+                                    <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent opacity-50"></div>
+                                )}
+
+                                <div className="mb-8">
+                                    <h3 className={`text-xl font-bold uppercase tracking-widest mb-2 ${plan.isRecommended ? 'text-yellow-400' : 'text-gray-400'}`}>
+                                        {plan.title}
+                                    </h3>
+                                    <div className="flex items-baseline gap-1">
+                                        <span className={`text-4xl md:text-5xl font-black ${plan.isRecommended ? 'text-white' : 'text-gray-200'}`}>
+                                            {plan.price}
+                                        </span>
+                                    </div>
                                 </div>
-                            )}
 
-                            <h3 className="text-2xl font-bold text-primary text-center heading-font mt-4">{plan.title}</h3>
-                            <p className="text-5xl font-extrabold my-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-400">
-                                {plan.price}
-                            </p>
+                                <div className="space-y-4 mb-10 flex-grow">
+                                    {plan.features.map((feature, i) => (
+                                        <div key={i} className="flex items-start gap-3">
+                                            <div className={`mt-1 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ${plan.isRecommended ? 'bg-yellow-500/20 text-yellow-400' : 'bg-blue-500/20 text-blue-400'}`}>
+                                                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                            </div>
+                                            <span className="text-sm text-gray-300 font-medium">{feature}</span>
+                                        </div>
+                                    ))}
+                                </div>
 
-                            <ul className="space-y-4 text-secondary mb-8 flex-grow">
-                                {plan.features.map((feature, i) => (
-                                    <li key={i} className="flex items-center gap-3">
-                                        <svg className="w-5 h-5 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                                        </svg>
-                                        <span className="text-primary/90">{feature}</span>
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <div className="mt-auto text-center">
-                                <WhatsAppButton message={plan.whatsappMessage} className="w-full">
-                                    Start Your App Journey
+                                <WhatsAppButton 
+                                    message={plan.whatsappMessage} 
+                                    className={`w-full justify-center py-4 ${plan.isRecommended ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 hover:shadow-yellow-500/30' : 'bg-white/10 hover:bg-white/20 border border-white/10'}`}
+                                >
+                                    {plan.isRecommended ? 'Get Priority Access' : 'Start Project'}
                                 </WhatsAppButton>
                             </div>
                         </div>
@@ -66,16 +74,19 @@ const Pricing: React.FC = () => {
                 ))}
             </div>
 
-            <div className="mt-16 text-center scroll-animation">
-                 <div className="glass-card p-8 rounded-2xl">
-                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                        <TrustStat value="50+" label="Happy Clients" />
-                        <TrustStat value="4.9 ⭐" label="Average Rating" />
-                        <TrustStat value="100%" label="On-Time Delivery" />
-                        <TrustStat value="24/7" label="Professional Support" />
+            <div className="mt-24 text-center scroll-animation max-w-5xl mx-auto">
+                 <div className="glass-card p-10 rounded-3xl border border-white/10 bg-white/5">
+                     <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
+                        <TrustStat value="100%" label="Success Rate" />
+                        <TrustStat value="2 Years" label="Experience" />
+                        <TrustStat value="4.9/5" label="Clutch Rating" />
+                        <TrustStat value="24/7" label="Support" />
                     </div>
                  </div>
-                 <p className="text-secondary mt-6">Flexible Payment Options Available. <a href="#contact" onClick={(e) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-blue-400 hover:underline">Book a Free Consultation</a> to discuss.</p>
+                 <p className="text-gray-500 mt-8 text-sm">
+                     *Prices are indicative for Indian Market standards. International pricing may vary. <br/>
+                     <a href="#contact" onClick={(e) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-white hover:text-blue-400 underline decoration-blue-500/50 underline-offset-4 transition-colors">Book a Free Consultation</a> to discuss custom requirements.
+                 </p>
             </div>
         </section>
     );

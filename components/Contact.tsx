@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { WHATSAPP_MESSAGES } from '../constants';
 import WhatsAppButton from './WhatsAppButton';
@@ -108,10 +107,7 @@ const Contact: React.FC = () => {
                             </WhatsAppButton>
                         </div>
                         <div className="pt-8 border-t border-white/10">
-                            <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-                                <span className="text-secondary">mohsin@example.com</span>
-                            </div>
+                            {/* Email removed as requested */}
                             <div className="flex items-center justify-center md:justify-start gap-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                                 <span className="text-secondary">Response time: &lt; 2 hours</span>
